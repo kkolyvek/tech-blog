@@ -23,7 +23,7 @@ app.set('view engine', 'handlebars');
 const session = require("express-session")
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'very secretive',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie:{
