@@ -1,0 +1,23 @@
+* {
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-family: lato, sans-serif;
+  letter-spacing: 110%;
+}
+
+#custom-logo {
+  background: lightblue;
+  border-radius: 10px;
+  color: black;
+}
+
+.custom-flex-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.custom-card-link {
+  text-decoration: none;
+}

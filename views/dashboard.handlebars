@@ -1,0 +1,32 @@
+
+<div class="d-flex justify-content-center">
+    <a href="/create"><button type="submit" class="btn btn-primary">Write a Post</button></a>
+</div>
+
+<div class="post-list">
+
+{{#each posts as |post|}}
+
+<div class="card m-4">
+    <div class="card-body">
+        <div class="d-flex justify-content-between alight-items-center">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <div>
+                <a href="/edit/{{post.id}}">
+                    <button type="button" class="btn btn-primary">Edit Post</button>
+                </a>
+                <button type="button" class="btn btn-danger" data-id="{{post.id}}">Delete Post</button>
+            </div>
+        </div>
+        <h4 class="card-text">{{ post.body }}</h4>
+    </div>
+    <div class="card-footer text-muted">
+        {{format_date post.createdAt}}
+    </div>
+</div>
+
+{{/each}}
+
+</div>
+
+<script src="/js/dashboard.js"></script>

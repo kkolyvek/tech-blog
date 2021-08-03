@@ -1,0 +1,15 @@
+<div class='card p-5'>
+    <form id="update-post-form">
+        <div class="mb-3">
+            <label for="inputTitle" class="form-label">Title</label>
+            <textarea type="text" class="form-control" id="inputTitle" cols="30" rows="1" required>{{post.title}}</textarea>
+        </div>
+        <div class="mb-3">
+            <text for="inputBody" class="form-label">Body</label>
+            <textarea type="text" class="form-control" id="inputBody" cols="30" rows="10" required>{{post.body}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+<script src="/js/edit.js"></script>

@@ -1,0 +1,43 @@
+<div class="card m-4">
+    <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+        <h4 class="card-text">{{ post.body }}</h4>
+    </div>
+    <div class="card-footer text-muted">
+        {{format_date post.createdAt}}
+    </div>
+</div>
+
+
+{{#each post.Comments}}
+
+<div class="card m-5">
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{this.body}}</p>
+            <footer class="blockquote-footer">{{this.User.username}}</footer>
+        </blockquote>
+    </div>
+    <div class="card-footer text-muted">
+        {{format_date this.createdAt}}
+    </div>
+</div>
+
+{{/each}}
+{{#if logged_in}}
+
+<div class="card m-5">
+    <form id="create-post-comment">
+        <div class="card-body">
+            <h4 class="card-text">Leave a comment!</h4>
+            <textarea type="text" class="form-control" id="inputBody" cols="30" rows="2" aria-describedby="bodyHelp" required></textarea>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" style="width: 80%">Submit</button>
+        </div>
+    </form>
+</div>
+
+{{/if}}
+
+<script src="/js/post.js"></script>
