@@ -4,7 +4,7 @@
         <h4 class="card-text">{{ post.body }}</h4>
     </div>
     <div class="card-footer text-muted">
-        {{format_date post.createdAt}}
+        Posted by {{post.User.username}} on {{format_date post.createdAt}}
     </div>
 </div>
 

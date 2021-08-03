@@ -5,7 +5,7 @@ const seedMe = async () => {
     await sequelize.sync({ force: true });
     await db.User.bulkCreate([
         {
-            username: "kkolyvek",
+            username: "Koppi",
             email: "koppi@koppi.com",
             password: "password"
         },
@@ -23,37 +23,32 @@ const seedMe = async () => {
 
     await db.Post.bulkCreate([
         {
-            title:"firstPost",
-            body:"content for first post",
+            title:"Using Handlebars",
+            body:"Just recently learned about using handlebars to create modular views for your web applications. If you haven't heard of it yet, definitely check it out!",
             userId: 1,
         },
         {
-            title:"secondPost",
-            body:"content for second post",
-            userId: 1,
-        },
-        {
-            title:"thirdPost",
-            body:"content for third post",
+            title:"Bootstrap's Cards",
+            body:"I love using Bootstrap's pre-build cards, I think they're pretty and get information across to the user really well. Does anyone else feel the same way? Let me know in the comments.",
             userId: 2,
         },
     ]);
 
     await db.Comment.bulkCreate([
         {
-            body:"content for first comment",
+            body:"Great suggestion, I'll definitely go check it out.",
             postId: 1,
+            userId: 2,
+        },
+        {
+            body:"Personally I like to use carousels, but I can see how that would be overkill for a lot of things.",
+            postId: 2,
             userId: 1,
         },
         {
-            body:"content for second comment",
+            body:"No.",
             postId: 1,
-            userId: 1,
-        },
-        {
-            body:"content for third comment",
-            postId: 1,
-            userId: 1,
+            userId: 3,
         },
     ]);
 
